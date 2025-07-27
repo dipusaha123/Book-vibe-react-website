@@ -9,6 +9,11 @@ const BookDetails = () => {
     console.log(data)
     const { bookName, image,author,review } = singleBook;
 
+    const handleMarkAsRead = (id) =>{
+        
+
+    }
+
     return (
         <div className="card card-side  shadow-sm mt-7 ">
             <div className=' p-14 bg-[#131313]/5 rounded-4xl'  >
@@ -27,8 +32,8 @@ const BookDetails = () => {
                     <p>Review :this is a review pages</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Read</button>
-                    <button className="btn btn-primary">Whish list</button>
+                    <button className="btn btn-primary">Mark As Read</button>
+                    <button className="btn btn-primary">Add To Whishlist</button>
                 </div>
             </div>
         </div>
