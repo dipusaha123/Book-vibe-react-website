@@ -1,0 +1,33 @@
+import React, { Suspense, useEffect, useState } from 'react';
+import Book from '../Book/Book';
+
+const Books = ({data}) => {
+
+    const [AllBooks, setAllBooks] = useState([])
+
+    // useEffect(() => {
+    //     fetch("BookData.json")
+    //     .then(res => res.json())
+    //     .then(data =>{
+    //         console.log(data)
+    //     })
+    // },[])
+
+
+    return (
+        <div>
+            <h1 className='text-3xl text-center p-6'>Books</h1>
+            <Suspense fallback={<span>Loading......</span>}>
+             
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                {
+                data.map((SingleBook) =><Book key={SingleBook.bookId} SingleBook={SingleBook}></Book>)
+              }
+              </div>
+
+            </Suspense>
+        </div>
+    );
+};
+
+export default Books;
